@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ControlAcademico.Entidades
 {
@@ -11,6 +12,12 @@ namespace ControlAcademico.Entidades
 		private string docenteAsignado;
 		private int cupoMaximo;
 		private int inscritos;
+
+		// Fase 2: llave primaria y relaciones para la base de datos
+		public int Id { get; set; }
+		public int DocenteId { get; set; }
+		public Docente Docente { get; set; }
+		public ICollection<Matricula> Matriculas { get; set; } = new List<Matricula>();
 
 		public string Codigo
 		{
@@ -60,6 +67,11 @@ namespace ControlAcademico.Entidades
 		{
 			get { return inscritos; }
 			private set { inscritos = value; }
+		}
+
+		// Constructor vacío: lo usan Entity Framework y los formularios
+		public Curso()
+		{
 		}
 
 		public Curso(string codigo, string nombre, int creditos, string docenteAsignado, int cupoMaximo)

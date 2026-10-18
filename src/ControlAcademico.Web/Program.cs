@@ -1,7 +1,14 @@
+using ControlAcademico.Datos;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Conexión a SQL Server (la cadena "Default" está en appsettings.json)
+builder.Services.AddDbContext<ControlAcademicoDbContext>(o =>
+    o.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 var app = builder.Build();
 

@@ -12,6 +12,9 @@ namespace ControlAcademico.Entidades
         public string CodigoEmpleado { get; set; }
         public string Especialidad { get; set; }
 
+        // Fase 2: cursos asignados a este docente
+        public ICollection<Curso> Cursos { get; set; } = new List<Curso>();
+
         public Docente() : base()
         {
         }

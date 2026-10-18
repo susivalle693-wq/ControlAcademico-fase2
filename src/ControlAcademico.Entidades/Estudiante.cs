@@ -21,6 +21,9 @@ namespace ControlAcademico.Entidades
         public int CreditosAprobados { get; set; }
         public List<string> MateriasInscritas { get; set; }
 
+        // Fase 2: las matrículas ahora viven en la tabla Matriculas
+        public ICollection<Matricula> Matriculas { get; set; } = new List<Matricula>();
+
         public Estudiante() : base()
         {
             MateriasInscritas = new List<string>();
