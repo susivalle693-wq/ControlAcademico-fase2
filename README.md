@@ -60,3 +60,27 @@ ControlAcademico-fase2/
 | Susana Nicole Valle Méndez | VM253306 |
 | Alessandra Guadalupe González Burgos | GB253116 |
 
+## Cómo ejecutar el proyecto
+
+**Requisitos:** .NET 8 SDK (o superior con el runtime 8), SQL Server (LocalDB o SQL Server Express) y Visual Studio 2022 o superior.
+
+1. Clonar el repositorio:
+```bash
+   git clone https://github.com/susivalle693-wq/ControlAcademico-fase2.git
+```
+2. Abrir `ControlAcademico.sln` con Visual Studio.
+3. Ajustar la cadena de conexión `Default` en `src/ControlAcademico.Web/appsettings.json` (o en `appsettings.Development.json`) con el servidor de SQL Server de su equipo.
+4. Crear la base de datos aplicando las migraciones:
+```bash
+   dotnet ef database update --project src/ControlAcademico.Datos --startup-project src/ControlAcademico.Web
+```
+5. Ejecutar la aplicación web:
+```bash
+   dotnet run --project src/ControlAcademico.Web
+```
+
+El prototipo de la Fase 1 sigue disponible:
+```bash
+dotnet run --project src/ControlAcademico.Consola
+```
+
