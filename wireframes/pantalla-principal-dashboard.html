@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--
+  Wireframe: Pantalla Principal / Dashboard
+  Sistema: Control Académico
+  Responsable: Persona 1
+  Nota: Este es un wireframe (boceto de baja fidelidad) de la futura
+  aplicación web en ASP.NET. Solo muestra distribución de elementos,
+  no es funcional.
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Wireframe - Pantalla Principal</title>
+<style>
+  * { box-sizing: border-box; font-family: Arial, sans-serif; }
+  body { margin: 0; background: #f2f2f2; color: #333; }
+
+  /* Barra superior */
+  header {
+    background: #4a2f7a; /* morado institucional */
+    color: white;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header h1 { font-size: 18px; margin: 0; }
+
+  /* Contenedor principal: menú lateral + contenido */
+  .layout { display: flex; min-height: 100vh; }
+
+  nav {
+    width: 200px;
+    background: #ffffff;
+    border-right: 2px dashed #bbb;
+    padding: 20px;
+  }
+  nav ul { list-style: none; padding: 0; }
+  nav li {
+    padding: 10px;
+    margin-bottom: 8px;
+    background: #eee;
+    border: 1px dashed #999;
+    text-align: center;
+  }
+
+  main { flex: 1; padding: 24px; }
+
+  .tarjetas {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .tarjeta {
+    flex: 1;
+    background: white;
+    border: 1px dashed #999;
+    padding: 20px;
+    text-align: center;
+  }
+  .tarjeta .numero { font-size: 28px; font-weight: bold; color: #4a2f7a; }
+
+  .panel {
+    background: white;
+    border: 1px dashed #999;
+    padding: 20px;
+  }
+  .panel h2 { margin-top: 0; font-size: 16px; }
+  .fila-tabla {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Sistema de Control Académico</h1>
+  <span>[ Usuario ]</span>
+</header>
+
+<div class="layout">
+  <!-- Menú lateral: acceso a las demás pantallas -->
+  <nav>
+    <ul>
+      <li>Dashboard</li>
+      <li>Estudiantes</li>
+      <li>Cursos</li>
+      <li>Matrículas</li>
+      <li>Calificaciones</li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Tarjetas resumen (KPIs rápidos) -->
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <div class="numero">120</div>
+        <div>Estudiantes activos</div>
+      </div>
+      <div class="tarjeta">
+        <div class="numero">15</div>
+        <div>Cursos disponibles</div>
+      </div>
+      <div class="tarjeta">
+        <div class="numero">340</div>
+        <div>Matrículas registradas</div>
+      </div>
+    </div>
+
+    <!-- Panel con actividad reciente -->
+    <div class="panel">
+      <h2>Actividad reciente</h2>
+      <div class="fila-tabla"><span>Matrícula registrada</span><span>Hoy, 10:20am</span></div>
+      <div class="fila-tabla"><span>Nueva calificación ingresada</span><span>Hoy, 09:05am</span></div>
+      <div class="fila-tabla"><span>Curso actualizado</span><span>Ayer, 4:40pm</span></div>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

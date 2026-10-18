@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--
+  Wireframe: Pantalla de Detalle de Curso
+  Sistema: Control Académico
+  Responsable: Susana Valle
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Wireframe - Detalle de Curso</title>
+<style>
+  * { box-sizing: border-box; font-family: Arial, sans-serif; }
+  body { margin: 0; background: #f2f2f2; color: #333; }
+
+  /* Barra superior */
+  header {
+    background: #4a2f7a; /* morado institucional */
+    color: white;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header h1 { font-size: 18px; margin: 0; }
+
+  /* Contenedor principal: menú lateral + contenido */
+  .layout { display: flex; min-height: 100vh; }
+
+  nav {
+    width: 200px;
+    background: #ffffff;
+    border-right: 2px dashed #bbb;
+    padding: 20px;
+  }
+  nav ul { list-style: none; padding: 0; }
+  nav li {
+    padding: 10px;
+    margin-bottom: 8px;
+    background: #eee;
+    border: 1px dashed #999;
+    text-align: center;
+  }
+  nav li.activo {
+    background: #4a2f7a;
+    color: white;
+    border: 1px dashed #4a2f7a;
+  }
+
+  main { flex: 1; padding: 24px; }
+
+  /* Encabezado de la pantalla con botón de volver */
+  .encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .boton {
+    border: 1px dashed #999;
+    background: white;
+    padding: 8px 14px;
+    cursor: pointer;
+  }
+  .boton.primario {
+    background: #4a2f7a;
+    color: white;
+    border: 1px dashed #4a2f7a;
+  }
+
+  /* Panel con la info principal del curso */
+  .panel {
+    background: white;
+    border: 1px dashed #999;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .panel h2 { margin-top: 0; font-size: 16px; }
+
+  .info-curso {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+  }
+  .campo { border-bottom: 1px solid #eee; padding: 8px 0; }
+  .campo span { display: block; font-size: 12px; color: #777; }
+  .campo strong { font-size: 15px; }
+
+  /* Tarjetas de cupo */
+  .tarjetas { display: flex; gap: 16px; margin-bottom: 20px; }
+  .tarjeta {
+    flex: 1;
+    background: white;
+    border: 1px dashed #999;
+    padding: 20px;
+    text-align: center;
+  }
+  .tarjeta .numero { font-size: 28px; font-weight: bold; color: #4a2f7a; }
+
+  /* Tabla de estudiantes matriculados */
+  table { width: 100%; border-collapse: collapse; }
+  th, td {
+    text-align: left;
+    padding: 10px 8px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+  }
+  th { color: #777; font-weight: normal; font-size: 12px; }
+
+  .acciones { display: flex; gap: 10px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Sistema de Control Académico</h1>
+  <span>[ Usuario ]</span>
+</header>
+
+<div class="layout">
+  <!-- Menú lateral: acceso a las demás pantallas -->
+  <nav>
+    <ul>
+      <li>Dashboard</li>
+      <li>Estudiantes</li>
+      <li class="activo">Cursos</li>
+      <li>Matrículas</li>
+      <li>Calificaciones</li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="encabezado">
+      <div class="boton">&larr; Volver al listado</div>
+      <div class="acciones">
+        <div class="boton">Editar</div>
+        <div class="boton">Eliminar</div>
+      </div>
+    </div>
+
+    <!-- Panel con la información general del curso -->
+    <div class="panel">
+      <h2>Detalle del curso</h2>
+      <div class="info-curso">
+        <div class="campo"><span>Código</span><strong>DSP404</strong></div>
+        <div class="campo"><span>Nombre</span><strong>Desarrollo de Aplicaciones con Software Propietario</strong></div>
+        <div class="campo"><span>Créditos</span><strong>4</strong></div>
+        <div class="campo"><span>Docente asignado</span><strong>Juan Carlos Menjívar Ramírez</strong></div>
+      </div>
+    </div>
+
+    <!-- Tarjetas resumen de cupo -->
+    <div class="tarjetas">
+      <div class="tarjeta">
+        <div class="numero">30</div>
+        <div>Cupo máximo</div>
+      </div>
+      <div class="tarjeta">
+        <div class="numero">18</div>
+        <div>Inscritos</div>
+      </div>
+      <div class="tarjeta">
+        <div class="numero">12</div>
+        <div>Cupos disponibles</div>
+      </div>
+    </div>
+
+    <!-- Panel con estudiantes matriculados -->
+    <div class="panel">
+      <h2>Estudiantes matriculados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Carné</th>
+            <th>Nombre</th>
+            <th>Nota</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>AM253101</td><td>Ana Martínez</td><td>8.5</td></tr>
+          <tr><td>CL253102</td><td>Carlos López</td><td>9.2</td></tr>
+          <tr><td>SR253103</td><td>Sofía Ramírez</td><td>7.8</td></tr>
+          <tr><td>JH253104</td><td>Jorge Hernández</td><td>8.0</td></tr>
+          <tr><td>KP253105</td><td>Karla Portillo</td><td>9.5</td></tr>
+          <tr><td>DR253106</td><td>Diego Reyes</td><td>7.2</td></tr>
+          <tr><td>MG253107</td><td>Mariana Guevara</td><td>8.8</td></tr>
+          <tr><td>ES253108</td><td>Emerson Salazar</td><td>6.9</td></tr>
+          <tr><td>LV253109</td><td>Laura Vásquez</td><td>9.0</td></tr>
+          <tr><td>RC253110</td><td>Roberto Cortez</td><td>7.5</td></tr>
+          <tr><td>NA253111</td><td>Nathaly Alvarado</td><td>8.3</td></tr>
+          <tr><td>FM253112</td><td>Fernando Molina</td><td>7.9</td></tr>
+          <tr><td>PB253113</td><td>Paola Beltrán</td><td>9.1</td></tr>
+          <tr><td>OC253114</td><td>Oscar Castillo</td><td>6.5</td></tr>
+          <tr><td>YT253115</td><td>Yesenia Torres</td><td>8.6</td></tr>
+          <tr><td>GB253116</td><td>Gerardo Bonilla</td><td>7.7</td></tr>
+          <tr><td>IF253117</td><td>Ingrid Flores</td><td>9.3</td></tr>
+          <tr><td>WM253118</td><td>Walter Mejía</td><td>8.1</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>
