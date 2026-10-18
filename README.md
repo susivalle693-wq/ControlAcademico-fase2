@@ -1,6 +1,6 @@
 # Sistema de Control Académico
 
-Proyecto de Cátedra, **Fase 2** (Universidad Don Bosco)
+Proyecto de Cátedra, **FASE 02**
 
 ## Descripción
 
@@ -8,7 +8,7 @@ Sistema para el registro y control de estudiantes, docentes, cursos, matrículas
 
 Este proyecto es la **ampliación de la Fase 1**, que modelaba las clases principales en C# con Programación Orientada a Objetos (herencia, clase abstracta e interfaces) y un prototipo en consola. En la Fase 2 el mismo sistema se convierte en una aplicación web conectada a una base de datos, con arquitectura en capas y un servicio web.
 
-## Nuevas funcionalidades (Fase 2)
+## Nuevas funcionalidades:
 
 - Aplicación web con **ASP.NET Core MVC** (.NET 8).
 - Persistencia en **SQL Server** con **Entity Framework Core** (Code First y migraciones).
@@ -52,29 +52,6 @@ ControlAcademico-fase2/
 | Acceso a datos | ControlAcademico.Datos | Entidades |
 | Modelo | ControlAcademico.Entidades | nadie |
 
-## Cómo ejecutar el proyecto
-
-**Requisitos:** .NET 8 SDK (o superior con el runtime 8), SQL Server (LocalDB o SQL Server Express) y Visual Studio 2022 o superior.
-
-1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/susivalle693-wq/ControlAcademico-fase2.git
-   ```
-2. Abrir `ControlAcademico.sln` con Visual Studio.
-3. Ajustar la cadena de conexión `Default` en `src/ControlAcademico.Web/appsettings.json` (o en `appsettings.Development.json`) con el servidor de SQL Server de su equipo.
-4. Crear la base de datos aplicando las migraciones:
-   ```bash
-   dotnet ef database update --project src/ControlAcademico.Datos --startup-project src/ControlAcademico.Web
-   ```
-5. Ejecutar la aplicación web:
-   ```bash
-   dotnet run --project src/ControlAcademico.Web
-   ```
-
-El prototipo de la Fase 1 sigue disponible:
-```bash
-dotnet run --project src/ControlAcademico.Consola
-```
 
 ## Integrantes del equipo
 
@@ -83,4 +60,3 @@ dotnet run --project src/ControlAcademico.Consola
 | Susana Nicole Valle Méndez | VM253306 |
 | Alessandra Guadalupe González Burgos | GB253116 |
 
-Repositorio: https://github.com/susivalle693-wq/ControlAcademico-fase2
